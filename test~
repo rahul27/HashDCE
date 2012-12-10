@@ -1,0 +1,486 @@
+WARNING: You're attempting to print out a bitcode file.
+This is inadvisable as it may cause display problems. If
+you REALLY want to taste LLVM bitcode first-hand, you
+can force output with the `-f' option.
+
+
+
+0x2a52828
+  %retval = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60188
+  %a = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60208
+  %b = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60288
+  %c = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60308
+  %d = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60388
+  %e = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a50988
+  %f = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a50a08
+  %g = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a50a88
+  %h = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60718
+  %i = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60798
+  %j = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60818
+  %k = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60898
+  %x = alloca i32, align 4
+0x2a5fec0
+
+
+
+0x2a60930
+  store i32 0, i32* %retval
+0x2a5ff60	0x2a52828
+
+
+
+0x2a609d8
+  %call = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32* %a)
+0x2a52708	0x2a60188
+
+
+
+0x2a60a88
+  %call1 = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32* %x)
+0x2a52708	0x2a60898
+
+
+
+0x2a60b08
+  %0 = load i32* %a, align 4
+0x2a60188
+
+
+
+0x2a60ba0
+  store i32 %0, i32* %b, align 4
+0x2a60b08	0x2a60208
+
+
+
+0x2a60c18
+  %1 = load i32* %b, align 4
+0x2a60208
+
+
+
+0x2a60cb0
+  store i32 %1, i32* %c, align 4
+0x2a60c18	0x2a60288
+
+
+
+0x2a60d28
+  %2 = load i32* %c, align 4
+0x2a60288
+
+
+
+0x2a60dc0
+  store i32 %2, i32* %d, align 4
+0x2a60d28	0x2a60308
+
+
+
+0x2a60e38
+  %3 = load i32* %d, align 4
+0x2a60308
+
+
+
+0x2a60ed0
+  store i32 %3, i32* %e, align 4
+0x2a60e38	0x2a60388
+
+
+
+0x2a60f48
+  %4 = load i32* %e, align 4
+0x2a60388
+
+
+
+0x2a60fe0
+  store i32 %4, i32* %f, align 4
+0x2a60f48	0x2a50988
+
+
+
+0x2a61058
+  %5 = load i32* %e, align 4
+0x2a60388
+
+
+
+0x2a610f0
+  %add = add nsw i32 %5, 10
+0x2a61058	0x2a5ff10
+
+
+
+0x2a60408
+  %6 = load i32* %d, align 4
+0x2a60308
+
+
+
+0x2a604a0
+  %add2 = add nsw i32 %add, %6
+0x2a610f0	0x2a60408
+
+
+
+0x2a60530
+  store i32 %add2, i32* %g, align 4
+0x2a604a0	0x2a50a08
+
+
+
+0x2a605a8
+  %7 = load i32* %a, align 4
+0x2a60188
+
+
+
+0x2a60640
+  %add3 = add nsw i32 10, %7
+0x2a5ff10	0x2a605a8
+
+
+
+0x2a61778
+  %8 = load i32* %b, align 4
+0x2a60208
+
+
+
+0x2a61810
+  %add4 = add nsw i32 %add3, %8
+0x2a60640	0x2a61778
+
+
+
+0x2a61888
+  %9 = load i32* %f, align 4
+0x2a50988
+
+
+
+0x2a61920
+  %add5 = add nsw i32 %add4, %9
+0x2a61810	0x2a61888
+
+
+
+0x2a619b0
+  store i32 %add5, i32* %h, align 4
+0x2a61920	0x2a50a88
+
+
+
+0x2a61a28
+  %10 = load i32* %x, align 4
+0x2a60898
+
+
+
+0x2a61ac0
+  %tobool = icmp ne i32 %10, 0
+0x2a61a28	0x2a5ff60
+
+
+
+0x2a61b68
+  br i1 %tobool, label %if.then, label %if.else
+0x2a61ac0	0x2a52590
+
+
+
+0x2a61be8
+  %11 = load i32* %a, align 4
+0x2a60188
+
+
+
+0x2a61c80
+  store i32 %11, i32* %c, align 4
+0x2a61be8	0x2a60288
+
+
+
+0x2a61cf8
+  %12 = load i32* %b, align 4
+0x2a60208
+
+
+
+0x2a61d90
+  store i32 %12, i32* %d, align 4
+0x2a61cf8	0x2a60308
+
+
+
+0x2a61e08
+  %13 = load i32* %a, align 4
+0x2a60188
+
+
+
+0x2a61e88
+  %14 = load i32* %b, align 4
+0x2a60208
+
+
+
+0x2a61f20
+  %add6 = add nsw i32 %13, %14
+0x2a61e08	0x2a61e88
+
+
+
+0x2a520d8
+  %15 = load i32* %d, align 4
+0x2a60308
+
+
+
+0x2a52170
+  %add7 = add nsw i32 %add6, %15
+0x2a61f20	0x2a520d8
+
+
+
+0x2a52200
+  store i32 %add7, i32* %i, align 4
+0x2a52170	0x2a60718
+
+
+
+0x2a52278
+  %16 = load i32* %a, align 4
+0x2a60188
+
+
+
+0x2a52310
+  %add8 = add nsw i32 %16, 10
+0x2a52278	0x2a5ff10
+
+
+
+0x2a52388
+  %17 = load i32* %d, align 4
+0x2a60308
+
+
+
+0x2a52420
+  %add9 = add nsw i32 %add8, %17
+0x2a52310	0x2a52388
+
+
+
+0x2a627c0
+  store i32 %add9, i32* %j, align 4
+0x2a52420	0x2a60798
+
+
+
+0x2a62850
+  store i32 10, i32* %c, align 4
+0x2a5ff10	0x2a60288
+
+
+
+0x2a628e0
+  store i32 20, i32* %b, align 4
+0x2a5ffb0	0x2a60208
+
+
+
+0x2a62958
+  br label %if.end
+0x2a525f0
+
+
+
+0x2a629d8
+  %18 = load i32* %a, align 4
+0x2a60188
+
+
+
+0x2a62a70
+  %add10 = add nsw i32 %18, 10
+0x2a629d8	0x2a5ff10
+
+
+
+0x2a62b00
+  %add11 = add nsw i32 %add10, 25
+0x2a62a70	0x2a50b00
+
+
+
+0x2a62b90
+  store i32 %add11, i32* %k, align 4
+0x2a62b00	0x2a60818
+
+
+
+0x2a62c08
+  %19 = load i32* %a, align 4
+0x2a60188
+
+
+
+0x2a62ca0
+  %add12 = add nsw i32 %19, 10
+0x2a62c08	0x2a5ff10
+
+
+
+0x2a62d18
+  %20 = load i32* %d, align 4
+0x2a60308
+
+
+
+0x2a62db0
+  %add13 = add nsw i32 %add12, %20
+0x2a62ca0	0x2a62d18
+
+
+
+0x2a62e40
+  store i32 %add13, i32* %j, align 4
+0x2a62db0	0x2a60798
+
+
+
+0x2a62eb8
+  %21 = load i32* %e, align 4
+0x2a60388
+
+
+
+0x2a6c600
+  store i32 %21, i32* %c, align 4
+0x2a62eb8	0x2a60288
+
+
+
+0x2a6c678
+  %22 = load i32* %c, align 4
+0x2a60288
+
+
+
+0x2a6c710
+  store i32 %22, i32* %d, align 4
+0x2a6c678	0x2a60308
+
+
+
+0x2a6c788
+  %23 = load i32* %c, align 4
+0x2a60288
+
+
+
+0x2a6c820
+  store i32 %23, i32* %k, align 4
+0x2a6c788	0x2a60818
+
+
+
+0x2a6c8b0
+  store i32 10, i32* %b, align 4
+0x2a5ff10	0x2a60208
+
+
+
+0x2a6c940
+  store i32 20, i32* %c, align 4
+0x2a5ffb0	0x2a60288
+
+
+
+0x2a6c9b8
+  br label %if.end
+0x2a525f0
+
+
+
+0x2a6ca38
+  %24 = load i32* %j, align 4
+0x2a60798
+
+
+
+0x2a61198
+  %call14 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32 %24)
+0x2a52708	0x2a6ca38
+
+
+
+0x2a61218
+  ret i32 0
+0x2a5ff60
+
+Hello1 : main

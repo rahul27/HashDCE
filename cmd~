@@ -1,0 +1,14 @@
+opt -load ../../../Debug+Asserts/lib/LLVMHashDCE.so -hashdce < hashdcenew.bc > /dev/null
+opt -load ../../../Debug+Asserts/lib/LLVMHashDCE.so -hashdce < test2.bc > /dev/null
+
+clang -O0 -emit-llvm  hashdcenew.c -c -o hashdcenew.bc
+llvm-gcc -S -emit-llvm hashdce.c -c -o hashdce.bc
+
+opt -scalarrepl < test2.bc > binga.bc
+
+
+sims -sim_type=vcs -sys=cmp -novera_build -novera_run
+
+
+
+
