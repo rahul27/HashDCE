@@ -31,7 +31,7 @@ using namespace std;
 #define RESTORE 1
 
 // Toggle printing of messages on the terminal
-#define PRINT 1
+#define PRINT 0
 
 STATISTIC(HashDCECounter, "Counts number of functions greeted");
 
@@ -322,9 +322,6 @@ struct HashDCE : public FunctionPass {
             Instruction * i;
             i =&*I;
             
-            
-            
-            
             if (i == NULL)
             {
                 continue;
@@ -420,7 +417,7 @@ struct HashDCE : public FunctionPass {
             }
             
             if (I == E)
-				break;
+                break;
         }
 
     
