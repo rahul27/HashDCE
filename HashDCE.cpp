@@ -70,7 +70,7 @@ struct HashDCE : public FunctionPass {
     map<Value*, Value*> CP_Table; // Stores compiler temporaries for load elimination
     stack<CP_Table_Stack_Entry> CP_Table_Stack; // Used as a store to restore CP_Table values after a branch
     map<Value*,bool> Mark; // Mark[i] = True means statement i cannot be eliminated
-    queue<Value*> WorkList;
+    queue<Value*> DeleteList;
     queue<Value*> IncList;
     map<Value*,int> HT; // Hash Table used for value numbering
     map<Value*,int> StatementContext; // Determines the HT entry value for an operand in statement i
@@ -375,7 +375,7 @@ struct HashDCE : public FunctionPass {
             // If an instruction is unmarked we can go ahead and erase it but only 
             // in case it is not a store an contains a HT valued operand that is 
             // in MarkContext
-            // Worklist contains the instructions that need to be eliminated 
+            // DeleteList contains the instructions that need to be eliminated 
             // This list is maintained as a queue so that the instructions first to be 
             // eliminted are the uses and not the defs.
             
@@ -405,14 +405,14 @@ struct HashDCE : public FunctionPass {
                             }
                         }
                         else
-                            WorkList.push(i);
+                            DeleteList.push(i);
                     }
                     else
-                        WorkList.push(i);
+                        DeleteList.push(i);
                 }                
                 else
                 {                    
-                    WorkList.push(i);
+                    DeleteList.push(i);
                 }
             }
             
@@ -424,10 +424,10 @@ struct HashDCE : public FunctionPass {
     		// Finally the we simply go ahead an remove the instructions
         // in the WorkList queue from the program.
 
-        while (!WorkList.empty())
+        while (!DeleteList.empty())
         {
-            Instruction *I = (Instruction *)WorkList.front();
-            WorkList.pop();
+            Instruction *I = (Instruction *)DeleteList.front();
+            DeleteList.pop();
             I->eraseFromParent();
         }
         
