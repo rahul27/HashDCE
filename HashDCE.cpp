@@ -31,7 +31,7 @@ using namespace std;
 #define RESTORE 1
 
 // Toggle printing of messages on the terminal
-#define PRINT 0
+#define PRINT 1
 
 STATISTIC(HashDCECounter, "Counts number of functions greeted");
 
@@ -314,11 +314,16 @@ struct HashDCE : public FunctionPass {
         // Program to identify useful instructions and mark them
         // Here we make use of StatementContext and MarkContext 
         // heavily
+        
+        
 
-        for (inst_iterator I=inst_end(F),E=inst_begin(F); I!=E; I--) 
+        for (inst_iterator I=inst_end(F),E=inst_begin(F); true ; I--) 
         {
             Instruction * i;
             i =&*I;
+            
+            
+            
             
             if (i == NULL)
             {
@@ -413,6 +418,9 @@ struct HashDCE : public FunctionPass {
                     WorkList.push(i);
                 }
             }
+            
+            if (I == E)
+				break;
         }
 
     

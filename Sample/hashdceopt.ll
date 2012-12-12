@@ -6,7 +6,6 @@ target triple = "x86_64-unknown-linux-gnu"
 
 define i32 @main() nounwind uwtable {
 entry:
-  %retval = alloca i32, align 4
   %a = alloca i32, align 4
   %j = alloca i32, align 4
   %x = alloca i32, align 4
